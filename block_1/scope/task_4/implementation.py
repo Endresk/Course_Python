@@ -12,3 +12,4 @@ def open_and_close_file(file_path):
 
     with open(file_path, 'r') as f:
         print(f)
+
