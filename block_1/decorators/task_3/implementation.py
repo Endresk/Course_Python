@@ -6,4 +6,11 @@ def counter():
         int - количество вызовов функции.
     """
 
-    raise NotImplementedError
+    def wrapper():
+        wrapper.calls += 1
+        return wrapper.calls
+
+    wrapper.calls = 0
+
+    return wrapper
+
