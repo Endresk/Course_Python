@@ -21,3 +21,4 @@ def get_days_count_by_month(month):
         'декабрь': 31,
     }
     return dict_months[month] if month in dict_months else 0
+
