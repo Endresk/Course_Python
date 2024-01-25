@@ -9,5 +9,3 @@ def convert_temperature(value, to_scale):
     """
 
     return 1.8 * int(value) + 32 if to_scale == 'F' else 5/9 * (int(value) - 32) if to_scale == 'C' else value
-
-
