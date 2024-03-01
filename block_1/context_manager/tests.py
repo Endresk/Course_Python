@@ -14,7 +14,7 @@ class File():
 
 
 def file_log():
-    with File("one_lesson/log.txt", "r") as file:
+    with File("log.txt", "r") as file:
         for f in file:
             if "LINK12" in f:
                 yield f
