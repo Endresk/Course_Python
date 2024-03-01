@@ -7,8 +7,7 @@ class File:
 
     def __enter__(self):
         self.file = open(self.filename, self.mode)
-        file = self.file
-        count = file.read().count('\n') + 1
+        count = self.file.read().count('\n') + 1
         print(f"Count row = {count}")
         self.file.seek(0)
 
