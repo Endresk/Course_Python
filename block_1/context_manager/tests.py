@@ -1,5 +1,5 @@
 
-class File():
+class File:
     def __init__(self, filename, mode):
         self.filename = filename
         self.mode = mode
@@ -7,6 +7,11 @@ class File():
 
     def __enter__(self):
         self.file = open(self.filename, self.mode)
+        file = self.file
+        count = file.read().count('\n') + 1
+        print(f"Count row = {count}")
+        self.file.seek(0)
+
         return self.file
 
     def __exit__(self, exc_type, exc_value, exc_traceback):
@@ -14,10 +19,9 @@ class File():
 
 
 def file_log():
-    with File("log.txt", "r") as file:
+    with File("one_lesson/log.txt", "r") as file:
         for f in file:
-            if "LINK12" in f:
-                yield f
+            yield f
 
 
 if __name__ == '__main__':
